@@ -2,8 +2,14 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:form)
+end
+
+get("/submit") do
+  @name = params[:name]
+  @age = params[:age]
+  @email = params[:email]
+  @learning_mode = params[:learning_mode]
+  @subscribe = params[:subscribe] == "on" ? "Yes" : "No"
+  erb(:result)
 end
