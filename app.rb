@@ -5,7 +5,7 @@ get("/") do
   erb(:form)
 end
 
-get("/submit") do
+post("/submit") do
   @name = params[:name]
   @age = params[:age]
   @email = params[:email]
